@@ -1,0 +1,15 @@
+---
+ - hosts: 192.168.29.131
+   tasks:
+    - name: to run the server
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+
+    - name: to run the website
+      copy:
+       src: /root/2127_little_fashion
+       dest: /var/www/html
+
